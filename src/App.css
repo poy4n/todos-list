@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Trebuchet MS';
+  background-color: #f0f2f5;
+
+}
+
+.container {
+  display: flex;
+  text-align: center;
+}
+
+.todo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: auto;
+  width: 80%;
+  gap: 20px;
+  padding: 10px;
+  height: 100%;
+}
+
+.todo {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: white;
+  box-shadow: 10px 10px 10px #cfcfcf;
+} 
+
+.form-container {
+  width: 30%;
+  height: 100vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+  padding: 20px;
+}
+
+button {
+  margin-top: 100px;
+  height: 30px;
+  border-radius: 50px;
+  box-shadow: 10px 10px 10px #cfcfcf;
+}
+
+button:focus,
+input:focus,
+textarea:focus{
+  outline: none;
+}
+
+p {
+  padding-top: 20px;
+}
