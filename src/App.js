@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import TodosGrid from './components/TodosGrid'
 import AddTodo from './components/AddTodo'
+import Header from './components/Header'
+
 
 import './App.css';
 
@@ -10,43 +12,38 @@ export default class App extends Component {
     todos: [
       {
         id: 1,
-        title: 'look for job',
-        content: 'have to hunt 10 jobs to catch up with the program'
+        title: 'hunt a job',
+        content: 'hunt 2-3 jobs to catch up with life',
+        importance: 'red'
       },
       {
         id: 2,
         title: 'do coding',
-        content: 'asdfdsfdsaaf'
+        content: 'it has to be everyday',
+        importance: 'red'
       },
       {
         id: 3,
-        title: 'do exercises',
-        content: 'dfgdfhfgjyejtehwrhwr'
+        title: 'do exercise',
+        content: '30min - 1hr of daily routine',
+        importance: 'orange'
       },
       {
         id: 4,
-        title: 'do exercises',
-        content: 'dfgdfhfgjyejtehwrhwr'
+        title: 'listen to music',
+        content: 'everyday there is a chance to explore a new genre',
+        importance: 'yellow'
+      },
+    ],
+    colors : [
+      {
+        red: `#CD6155`
       },
       {
-        id: 5,
-        title: 'look for job',
-        content: 'have to hunt 10 jobs to catch up with the program'
+        orange: `#DC7633`
       },
       {
-        id: 6,
-        title: 'do coding',
-        content: 'asdfdsfdsaaf'
-      },
-      {
-        id: 7,
-        title: 'do exercises',
-        content: 'dfgdfhfgjyejtehwrhwr'
-      },
-      {
-        id: 8,
-        title: 'do exercises',
-        content: 'dfgdfhfgjyejtehwrhwr'
+        yellow: `#F4D03F`
       },
     ]
   }
@@ -69,14 +66,27 @@ export default class App extends Component {
     })
   }
 
+  addBorder = (color) => {
+
+    let borderColor = ''
+    this.state.colors.forEach(c => {
+      if(Object.keys(c)[0] === color)
+      return borderColor = c[color] 
+    })
+    return {border: `5px solid ${borderColor}`}
+  }
+
   render() {
 
     const { todos } = this.state
 
     return (
-      <div className="container">
-        <AddTodo addTodo={this.addTodo}/>
-        <TodosGrid todos={todos} deleteTodo={this.deleteTodo}/>
+      <div>
+        <Header />
+        <div className="container">
+          <AddTodo addTodo={this.addTodo}/>
+          <TodosGrid todos={todos} deleteTodo={this.deleteTodo} addBorder={this.addBorder}/>
+        </div>
       </div>
     )
   }

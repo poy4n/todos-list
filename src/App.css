@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Trebuchet MS';
+  font-family: fantasy;
   background-color: #f0f2f5;
 
 }
@@ -18,25 +18,29 @@ body {
 .todo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin: auto;
-  width: 80%;
+  width: 70%;
   gap: 20px;
   padding: 10px;
   height: 100%;
+  margin-top: 40px;
 }
 
 .todo {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  min-height: 200px;
   padding: 20px;
-  border: 2px solid rgb(0, 0, 0);
   background-color: white;
-  box-shadow: 10px 10px 10px #cfcfcf;
+  box-shadow: 20px 20px 30px #cfcfcf;
 } 
+
+.todo:hover {
+  cursor: pointer;
+  position: relative;
+  bottom: 10px;
+}
 
 .form-container {
   width: 30%;
-  height: 100vh;
 }
 
 .form {
@@ -47,19 +51,56 @@ body {
   padding: 20px;
 }
 
-button {
-  margin-top: 100px;
+.title {
   height: 30px;
-  border-radius: 50px;
+  padding: 5px;
+}
+
+.form h6,
+.form h4 {
+  margin-top: 10px;
+}
+
+textarea {
+  padding: 5px;
+}
+
+.radio {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  height: 30px;
+  border-radius: 30px;
   box-shadow: 10px 10px 10px #cfcfcf;
+  font-size: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #52BE80;
 }
 
 button:focus,
 input:focus,
-textarea:focus{
+textarea:focus {
   outline: none;
 }
 
 p {
   padding-top: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #16161e;
+  box-shadow: 10px 10px 10px #cfcfcf;
+  color: white;
+  height: 50px;
 }
