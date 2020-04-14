@@ -37,13 +37,13 @@ export default class App extends Component {
     ],
     colors : [
       {
-        red: `#CD6155`
+        red: `#E74C3C`
       },
       {
-        orange: `#DC7633`
+        orange: `#F39C12`
       },
       {
-        yellow: `#F4D03F`
+        yellow: `#F7DC6F`
       },
     ]
   }
