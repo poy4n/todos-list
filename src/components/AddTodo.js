@@ -28,11 +28,10 @@ export default class AddTodo extends Component {
         return (
             <div className="form-container">
                 <form className="form">
-                    <label>Titile</label>
+                    <label className="label">Titile</label>
                     <input className="title" type="text" name="title" onChange={this.handleChange} value={this.state.title} placeholder="name it..."/>
-                    <label>Content</label>
+                    <label className="label">Content</label>
                     <textarea type="text" rows="20" name="content" onChange={this.handleChange} value={this.state.content} placeholder="detail it to make it..."/>
-
                     <p>Prioritise</p>
                     <div className="radio">
                         <input id="red" name="importance" value="red" type="radio" checked={this.state.importance === 'red'} onChange={this.handleChange}/>
